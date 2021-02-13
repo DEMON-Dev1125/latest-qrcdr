@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="199" height="44" viewBox="0 0 199 44">
+  <g id="Group_116" data-name="Group 116" transform="translate(0 0)">
+    <rect id="Rectangle_20" data-name="Rectangle 20" width="199" height="44" rx="22" transform="translate(0 0)" fill="#1565d8"/>
+    <text id="Download" transform="translate(78 3)" fill="#f7fcff" font-size="20" font-family="HKGrotesk-SemiBold, HK Grotesk" font-weight="600"><tspan x="0" y="18">Download</tspan></text>
+    <text id="JPG" transform="translate(114 23)" fill="#f7fcff" font-size="12" font-family="HKGrotesk-Light, HK Grotesk" font-weight="300"><tspan x="0" y="11">JPG</tspan></text>
+    <g id="Group_109" data-name="Group 109" transform="translate(26.057 12.183)">
+      <path id="Path_134" data-name="Path 134" d="M24.243,19.916a.866.866,0,0,0-.916.916V24.5H6.833V19.916A.866.866,0,0,0,5.916,19,.866.866,0,0,0,5,19.916v5.5a.866.866,0,0,0,.916.916H24.243a.866.866,0,0,0,.916-.916V20.833A.866.866,0,0,0,24.243,19.916Z" transform="translate(-5 -6.194)" fill="#f7f7f7"/>
+      <path id="Path_135" data-name="Path 135" d="M.916,5.475A.832.832,0,0,0,1.558,5.2L3.665,3.093v6.964a.866.866,0,0,0,.916.916.866.866,0,0,0,.916-.916V3.093L7.606,5.2a.99.99,0,0,0,.641.275A.99.99,0,0,0,8.889,5.2a.886.886,0,0,0,0-1.283L5.223.252C5.132.16,5.04.069,4.948.069a1,1,0,0,0-.733,0C4.124.16,4.032.16,3.94.252L.275,3.917a.886.886,0,0,0,0,1.283A.832.832,0,0,0,.916,5.475Z" transform="translate(14.662 10.973) rotate(180)" fill="#f7f7f7"/>
+    </g>
+  </g>
+</svg>

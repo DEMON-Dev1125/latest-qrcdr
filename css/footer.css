@@ -1,0 +1,161 @@
+.footer__wave {
+  background-color: #f8fbff;
+}
+.footer__section {
+  background-color: #f8fbff;
+  padding: 9rem 0 9rem 0;
+}
+.footer__up {
+  background-image: url(../svg/footer-up.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 523px;
+}
+.footer__title {
+  font-family: "HK Grotesk";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 48px;
+  text-align: center;
+  letter-spacing: 0.2px;
+  color: #ffffff;
+  margin-top: 5.188rem;
+}
+.footer__describe {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 31px;
+  text-align: center;
+  color: #ffffff;
+  mix-blend-mode: normal;
+  opacity: 0.6;
+  margin-top: 1.438rem;
+}
+.link__area {
+  margin-top: 3rem;
+  text-align: center;
+}
+.footer_scan {
+  margin-top: 2.5rem;
+}
+.qr__title {
+  font-family: "HK Grotesk";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 32px;
+  letter-spacing: 0.2px;
+  color: #ffffff;
+  padding-top: 2rem;
+}
+
+.footer__down {
+  margin-top: 8rem;
+  text-align: right;
+}
+.footer__down ul li {
+  display: inline;
+  justify-content: end;
+}
+.footer__link a {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+  color: #183b56;
+}
+.social__icons {
+  margin: 2rem 0 2rem 0;
+}
+
+.copyright {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+  color: #5a7184;
+}
+
+@media screen and (min-width: 500px) {
+  .footer__logo {
+    display: none;
+  }
+  .link__free__out,
+  .link__white__store {
+    display: none;
+  }
+  .footer__wave__mobile {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .footer__section {
+    padding-top: 3rem;
+  }
+  .footer__title {
+    font-size: 27px;
+    line-height: 30px;
+  }
+  .footer__describe {
+    font-size: 15px;
+    line-height: 25px;
+  }
+  .footer__up {
+    background-image: url(../svg/phone_rockapp_bg.svg);
+    background-size: cover;
+    height: auto;
+    padding-bottom: 3rem;
+    margin-right: 15px;
+    margin-left: 15px;
+  }
+  .footer__down {
+    margin-top: 0;
+    text-align: left;
+  }
+  .footer__down .footer__link a {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    color: #183b56;
+  }
+  .qr__title {
+    font-family: "HK Grotesk";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.2px;
+    color: #ffffff;
+    margin-bottom: 3rem;
+  }
+  .link__area .link__white__store {
+    margin-top: 1rem;
+  }
+  .link__free,
+  .link__store {
+    display: none;
+  }
+  .footer__wave {
+    display: none;
+  }
+  .footer__wave__mobile {
+    background-color: #f8fbff;
+  }
+}
+
+@media screen and (min-width: 320px) {
+  .footer__up {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+}

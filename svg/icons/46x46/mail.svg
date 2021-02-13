@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27">
+  <rect id="Rectangle_70" data-name="Rectangle 70" width="27" height="27" rx="13.5" fill="#31a1d3"/>
+  <g id="mail" transform="translate(5.745 7.637)">
+    <g id="Group_50" data-name="Group 50" transform="translate(0 0)">
+      <path id="Path_54" data-name="Path 54" d="M14.277,85.333H.772A.774.774,0,0,0,0,86.1v8.489a.774.774,0,0,0,.772.772H14.277a.774.774,0,0,0,.772-.772V86.1A.774.774,0,0,0,14.277,85.333Zm-.29.579L7.968,90.426a.807.807,0,0,1-.888,0L1.061,85.912Zm-3.215,4.813,3.28,4.052.011.011H.986L1,94.776l3.28-4.052a.289.289,0,0,0-.45-.364L.579,94.372v-8.1l6.154,4.616a1.381,1.381,0,0,0,1.582,0l6.154-4.616v8.1L11.222,90.36a.289.289,0,0,0-.45.364Z" transform="translate(0 -85.333)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

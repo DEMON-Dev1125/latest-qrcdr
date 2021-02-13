@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27">
+  <rect id="Rectangle_74" data-name="Rectangle 74" width="27" height="27" rx="13.5" fill="#31a1d3"/>
+  <g id="Telepjon_In" data-name="Telepjon In" transform="translate(4.929 6.539)">
+    <path id="Path_61" data-name="Path 61" d="M18.674,7.8A11.041,11.041,0,0,0,10.416,4,11.041,11.041,0,0,0,2.157,7.8a.6.6,0,1,0,.9.805A9.851,9.851,0,0,1,10.416,5.2,9.851,9.851,0,0,1,17.784,8.61a.6.6,0,0,0,.9-.805Z" transform="translate(-2.003 -4)" fill="#fff"/>
+    <path id="Path_62" data-name="Path 62" d="M12.012,10a7.922,7.922,0,0,0-5.848,2.6.6.6,0,1,0,.884.817,6.683,6.683,0,0,1,9.935,0,.6.6,0,0,0,.884-.817A7.922,7.922,0,0,0,12.012,10Z" transform="translate(-3.599 -6.394)" fill="#fff"/>
+    <path id="Path_63" data-name="Path 63" d="M13.585,16a4.916,4.916,0,0,0-3.42,1.37.6.6,0,1,0,.829.865,3.756,3.756,0,0,1,5.181,0A.6.6,0,0,0,17,17.37,4.916,4.916,0,0,0,13.585,16Z" transform="translate(-5.172 -8.788)" fill="#fff"/>
+    <path id="Path_64" data-name="Path 64" d="M14.337,22.356a1.2,1.2,0,1,0,.848-.368,1.2,1.2,0,0,0-.848.368Z" transform="translate(-6.79 -11.177)" fill="#fff"/>
+  </g>
+</svg>

@@ -1,0 +1,80 @@
+.input[type="text"] {
+  height: 50px !important;
+}
+.header__section {
+  padding: 0 7.688rem;
+}
+.header__title {
+  font-family: "HK Grotesk";
+  font-size: 50px;
+  font-weight: bold;
+  line-height: 60px;
+  color: #31a1d3;
+}
+.header__describe {
+  font-family: "Open Sans";
+  font-size: 25px;
+  line-height: 35px;
+  color: #707070;
+  margin-top: 1.375rem;
+}
+.header__button {
+  margin-top: 2.813rem;
+}
+.header__link {
+  margin-top: 4.313rem;
+}
+
+/* header section style */
+@media screen and (max-width: 1024px) {
+  .header__phone {
+    display: none;
+  }
+}
+@media screen and (min-width: 425px) {
+  .header__button__mobile {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .nav a img {
+    width: 50%;
+    margin-top: 10px;
+  }
+  .header__section {
+    padding: 0 15px !important;
+  }
+  .header__title {
+    margin-top: 15px;
+    font-size: 35px;
+    line-height: 35px;
+  }
+  .header__describe {
+    font-size: 15px;
+    line-height: 25px;
+  }
+  .header__button {
+    display: none;
+  }
+  .header__button__mobile {
+    margin-top: 15px;
+  }
+  .header__button__mobile img {
+    width: 85%;
+  }
+  .header__link {
+    margin-top: 30px !important;
+    text-align: center;
+  }
+  .header__link img {
+    width: 45%;
+  }
+}
+@media screen and (max-width: 320px) {
+  .header__title {
+    margin-top: 15px;
+    font-size: 30px;
+    line-height: 35px;
+  }
+}
