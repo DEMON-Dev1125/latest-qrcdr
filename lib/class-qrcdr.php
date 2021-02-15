@@ -446,7 +446,9 @@ class QRvct extends QRvect
             } else {
                 $path = dirname(dirname(__FILE__)).'/'.$watermark;
                 if (file_exists($path)) {
-                    $mimetype = mime_content_type($path);
+                    // $mimetype = mime_content_type($path);
+                    $ext = pathinfo($path, PATHINFO_EXTENSION);
+                    $mimetype = 'image/' . $ext;
                     $type = $mimetype == 'image/svg' ? $mimetype.'+xml' : $mimetype;
                     $data = file_get_contents($path);
                     $base64 = 'data:' . $type . ';base64,' . base64_encode($data);
