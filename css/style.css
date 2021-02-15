@@ -150,7 +150,7 @@
 .input-group .input-group-addon {
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
-  height: 24px;
+  height: auto;
 }
 .input-group .input-group-addon i {
   width: 8px;
@@ -160,7 +160,7 @@
   font-size: 8px;
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
-  height: 24px;
+  height: auto;
 }
 .right__footer {
   margin-top: 26px;

@@ -58,9 +58,9 @@ require dirname(__FILE__).'/'.$relative.'include/head.php';
     </head>
     <body class="qrcdr">
         <?php
-        // if (file_exists(dirname(__FILE__).'/'.$relative.'template/navbar.php')) {
-        //     include dirname(__FILE__).'/'.$relative.'template/navbar.php';
-        // }
+        if (file_exists(dirname(__FILE__).'/'.$relative.'template/navbar.php')) {
+            include dirname(__FILE__).'/'.$relative.'template/navbar.php';
+        }
         if (file_exists(dirname(__FILE__).'/'.$relative.'template/header.php')) {
             include dirname(__FILE__).'/'.$relative.'template/header.php';
         }

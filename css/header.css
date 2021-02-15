@@ -1,6 +1,6 @@
-.input[type="text"] {
-  height: 50px !important;
-}
+.header {
+  margin-top: 60px !important;
+} 
 .header__section {
   padding: 0 7.688rem;
 }
