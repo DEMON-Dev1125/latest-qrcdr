@@ -1,7 +1,6 @@
 <div class="header">
   <div class="header__section container-fluid">
     
-
     <nav class="navbar navbar-expand-md">
       <a href=""><img src="<?php echo $relative; ?>svg/logo.svg" alt="" /></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
