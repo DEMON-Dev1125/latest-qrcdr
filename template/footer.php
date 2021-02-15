@@ -60,3 +60,10 @@
         <div class="copyright">Copyright © 2020. Crafted with love.</div>
     </div>
 </div>
+
+<script>
+    window.onscroll = () => {
+        const nav = document.querySelector('#navbar');
+        if (this.scrollY <= 10) nav.classList.remove("scroll"); else nav.classList.add("scroll");
+    };
+</script>

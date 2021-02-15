@@ -30,7 +30,7 @@
           </div>
         </div>
         <div class="header__link">
-          <a href="">
+          <a href="#qr__section">
             <img src="<?php echo $relative; ?>svg/buttons/down_now.svg" alt="" />
           </a>
         </div>

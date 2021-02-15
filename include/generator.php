@@ -1,6 +1,6 @@
 <?php $sidebarorder = 'left' == qrcdr()->getConfig('sidebar') ? '' : ' order-last'; ?>
 <input type="hidden" id="qrcdr-relative" value="<?php echo $relative; ?>">
-<div class="content__section">
+<div class="content__section" id="qr__section">
     <div class="container content__body">
         <div class="row mt-3">
 
