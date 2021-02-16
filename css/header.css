@@ -1,8 +1,14 @@
 html {
   scroll-behavior: smooth;
 }
+.form-control {
+  font-size: 16px !important;
+}
+.scroll {
+  background-color: #FFF;
+}
 .header {
-  margin-top: 60px !important;
+  margin-top: 60px;
 } 
 .header__section {
   padding: 0 7.688rem;
@@ -80,4 +86,8 @@ html {
     font-size: 30px;
     line-height: 35px;
   }
+}
+
+.fa-plus, .fa-minus {
+  padding-top: 8px;
 }

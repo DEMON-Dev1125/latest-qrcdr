@@ -46,10 +46,11 @@ require dirname(__FILE__).'/'.$relative.'include/head.php';
         <link rel="shortcut icon" href="<?php echo $relative; ?>images/favicon.ico">
         <link href="<?php echo $relative; ?>bootstrap/<?php echo $rtl['css']; ?>/bootstrap.min.css" rel="stylesheet">
         <link href="<?php echo $relative; ?>css/font-awesome.min.css" rel="stylesheet">
+        <script src="<?php echo $relative; ?>js/jquery-3.5.1.min.js"></script>
+        <script src="<?php echo $relative; ?>bootstrap/js/bootstrap.min.js"></script>
         <link href="<?php echo $relative; ?>css/header.css" rel="stylesheet">
         <link href="<?php echo $relative; ?>css/style.css" rel="stylesheet">
         <link href="<?php echo $relative; ?>css/footer.css" rel="stylesheet">
-        <script src="<?php echo $relative; ?>js/jquery-3.5.1.min.js"></script>
         <?php
         qrcdr()->loadQRcdrCSS($version);
         qrcdr()->loadPluginsCss();

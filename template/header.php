@@ -31,7 +31,7 @@
         </div>
         <div class="header__link">
           <a href="#qr__section">
-            <img src="<?php echo $relative; ?>svg/buttons/down_now.svg" alt="" />
+            <img src="<?php echo $relative; ?>svg/buttons/visit_btn_blue.svg" alt="" />
           </a>
         </div>
       </div>
@@ -46,3 +46,10 @@
     <img src="<?php echo $relative; ?>svg/header_wave.svg" width="100%" alt="" />
   </div>
 </div>
+
+<script>
+    window.onscroll = () => {
+        const nav = document.querySelector('#navbar');
+        if (this.scrollY <= 10) nav.classList.remove("scroll"); else nav.classList.add("scroll");
+    };
+</script>
