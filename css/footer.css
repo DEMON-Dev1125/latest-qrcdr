@@ -54,7 +54,8 @@
 
 .footer__down {
   margin-top: 8rem;
-  text-align: right;
+  margin-bottom: 2rem;
+  text-align: center;
 }
 .footer__down ul li {
   display: inline;

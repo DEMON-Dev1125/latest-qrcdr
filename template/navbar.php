@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-sm fixed-top top-menu-wrapper" id="navbar">
 	<div class="container">
-		<a href=""><img src="<?php echo $relative; ?>svg/logo.svg" alt="" /></a>
+		<a href="https://free-qr.codes/"><img src="<?php echo $relative; ?>svg/logo.svg" alt="" /></a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 		<span class="navbar-toggler-icon"></span>
 		</button>

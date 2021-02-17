@@ -42,20 +42,25 @@
         </div>
         <div class="footer__down row">
             <div class="col-6 col-md-4 footer__link">
-                <a href="">Term & Conditions</a>
+                <a href="<?php echo $relative?>privacy.php">Privacy Policy</a>
             </div>
             <div class="col-6 col-md-4 footer__link">
-                <a href="">Privacy Policy</a>
+                <a href="#">
+                    <img src="<?php echo $relative; ?>svg/icons/google.svg" alt="" />
+                </a>
+                <a href="#">
+                    <img src="<?php echo $relative; ?>svg/icons/twitter.svg" alt="" />
+                </a>
+                <a href="#">
+                    <img src="<?php echo $relative; ?>svg/icons/linkedin.svg" alt="" />
+                </a>
+                <a href="#">
+                    <img src="<?php echo $relative; ?>svg/icons/instagram.svg" alt="" />
+                </a>
             </div>
             <div class="col-6 col-md-4 footer__link">
-                <a href="">more</a>
+                <a href="<?php echo $relative?>support.php">support</a>
             </div>
-        </div>
-        <div class="social__icons text-center">
-            <a href="#"><img src="<?php echo $relative; ?>svg/icons/google.svg" alt="" /></a>
-            <a href="#"><img src="<?php echo $relative; ?>svg/icons/twitter.svg" alt="" /></a>
-            <a href="#"><img src="<?php echo $relative; ?>svg/icons/linkedin.svg" alt="" /></a>
-            <a href="#"><img src="<?php echo $relative; ?>svg/icons/instagram.svg" alt="" /></a>
         </div>
         <div class="copyright">Copyright © 2020. Crafted with love.</div>
     </div>
