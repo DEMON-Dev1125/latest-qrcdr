@@ -51,11 +51,13 @@ require dirname(__FILE__).'/'.$relative.'include/head.php';
         <link href="<?php echo $relative; ?>css/header.css" rel="stylesheet">
         <link href="<?php echo $relative; ?>css/style.css" rel="stylesheet">
         <link href="<?php echo $relative; ?>css/footer.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <?php
         qrcdr()->loadQRcdrCSS($version);
         qrcdr()->loadPluginsCss();
         qrcdr()->setMainColor(qrcdr()->getConfig('color_primary'));
         ?>
+        <script data-ad-client="ca-pub-5458702749841336" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     </head>
     <body class="qrcdr">
         <?php

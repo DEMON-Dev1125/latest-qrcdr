@@ -37,32 +37,29 @@
             </div>
             <div class="col-sm-2"></div>
         </div>
-        <div class="footer__logo">
-            <a href=""><img src="<?php echo $relative; ?>svg/footer_logo.svg" alt="" /></a>
-        </div>
         <div class="footer__down row">
-            <div class="col-6 col-md-4 footer__link">
-                <a href="<?php echo $relative?>privacy.php">Privacy Policy</a>
+            <div class="col-6 col-md-4 footer__link text-center">
+                <a href="<?php echo $relative; ?>privacy.php">Privacy Policy</a>
             </div>
-            <div class="col-6 col-md-4 footer__link">
-                <a href="#">
-                    <img src="<?php echo $relative; ?>svg/icons/google.svg" alt="" />
-                </a>
-                <a href="#">
-                    <img src="<?php echo $relative; ?>svg/icons/twitter.svg" alt="" />
-                </a>
-                <a href="#">
-                    <img src="<?php echo $relative; ?>svg/icons/linkedin.svg" alt="" />
-                </a>
-                <a href="#">
-                    <img src="<?php echo $relative; ?>svg/icons/instagram.svg" alt="" />
-                </a>
+            <div class="col-6 col-md-4 footer__link text-center">
+                <a href="<?php echo $relative; ?>support.php">support</a>
             </div>
-            <div class="col-6 col-md-4 footer__link">
-                <a href="<?php echo $relative?>support.php">support</a>
+            <div class="col-12 col-md-4 footer__link text-center">
+                <a href="https://www.youtube.com/channel/UCnM8uaoohMR0SaTBm88jS0Q">
+                    <i class="fa fa-social fa-youtube"></i>
+                </a>
+                <a href="https://www.facebook.com/free-qr.codes">
+                    <i class="fa fa-social fa-facebook"></i>
+                </a>
+                <a href="https://twitter.com/freeqrcodes1">
+                    <i class="fa fa-social fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/freeqrcodes22/">
+                    <i class="fa fa-social fa-instagram"></i>
+                </a>
             </div>
         </div>
-        <div class="copyright">Copyright © 2020. Crafted with love.</div>
+        <div class="copyright">Copyright © 2021. Octopus22.com</div>
     </div>
 </div>
 
