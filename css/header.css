@@ -5,11 +5,11 @@ html {
   font-size: 16px !important;
 }
 .scroll {
-  background-color: #FFF;
+  background-color: #fff;
 }
 .header {
   margin-top: 95px;
-} 
+}
 .header__section {
   padding: 0 7.688rem;
 }
@@ -88,7 +88,8 @@ html {
   }
 }
 
-.fa-plus, .fa-minus {
+.fa-plus,
+.fa-minus {
   padding-top: 8px;
 }
 .top-menu-wrapper {

@@ -403,7 +403,7 @@ input:checked + .slider:before {
     right: 31%;
     top: 50%;
   }
-  .left__arrow img{
+  .left__arrow img {
     max-width: 70%;
   }
   .center__progress {
@@ -420,9 +420,9 @@ input:checked + .slider:before {
     color: #fff;
   }
   .center__progress .line {
-    border-right: 1px solid #1565D8;
+    border-right: 1px solid #1565d8;
     height: 180px;
-    background-color: #1565D8;
+    background-color: #1565d8;
     width: 2px;
     margin: 10px 0 10px 49%;
   }

@@ -59,7 +59,7 @@
                 </a>
             </div>
         </div>
-        <div class="copyright">Copyright © 2021. Octopus22.com</div>
+        <div class="copyright">Copyright © 2021. <a href="Octopus22.com">Octopus22.com</a></div>
     </div>
 </div>
 

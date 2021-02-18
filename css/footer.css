@@ -69,6 +69,9 @@
   line-height: 25px;
   color: #183b56;
 }
+.footer__link a:hover {
+  text-decoration: none;
+}
 .social__icons {
   margin: 2rem 0 2rem 0;
 }
@@ -81,6 +84,34 @@
   line-height: 22px;
   text-align: center;
   color: #5a7184;
+}
+
+.copyright a {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+  color: #5a7184 !important;
+}
+
+.copyright a:hover {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+  color: #5a7184 !important;
+}
+
+.email a {
+  color: black !important;
+}
+.email a:hover {
+  color: black !important;
+  text-decoration: none;
 }
 
 @media screen and (min-width: 500px) {

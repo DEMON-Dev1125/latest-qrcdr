@@ -64,35 +64,39 @@ require dirname(__FILE__).'/'.$relative.'include/head.php';
     ?>
 
     <div class="container" style="margin-top: 100px;">
-        We are always happy to hear from our clients and visitors, you may contact us anytime
-        Email: support@octopus.com
+        <p>
+            We are always happy to hear from our clients and visitors, you may contact us anytime
+        </p>
+        <p class="email">
+            <a href=""><i class="fa fa-envelope-o"></i> : support@octopus.com</a>
+        </p>
     </div>
 
-        <div class="container mb-5">
-            <div class="footer__down row">
-                <div class="col-6 col-md-4 footer__link text-center">
-                    <a href="<?php echo $relative; ?>privacy.php">Privacy Policy</a>
-                </div>
-                <div class="col-6 col-md-4 footer__link text-center">
-                    <a href="<?php echo $relative; ?>support.php">support</a>
-                </div>
-                <div class="col-12 col-md-4 footer__link text-center">
-                    <a href="https://www.youtube.com/channel/UCnM8uaoohMR0SaTBm88jS0Q">
-                        <i class="fa fa-social fa-youtube"></i>
-                    </a>
-                    <a href="https://www.facebook.com/free-qr.codes">
-                        <i class="fa fa-social fa-facebook"></i>
-                    </a>
-                    <a href="https://twitter.com/freeqrcodes1">
-                        <i class="fa fa-social fa-twitter"></i>
-                    </a>
-                    <a href="https://www.instagram.com/freeqrcodes22/">
-                        <i class="fa fa-social fa-instagram"></i>
-                    </a>
-                </div>
+    <div class="container mb-5 fixed-bottom">
+        <div class="footer__down row">
+            <div class="col-6 col-md-4 footer__link text-center">
+                <a href="<?php echo $relative; ?>privacy.php">Privacy Policy</a>
             </div>
-            <div class="copyright">Copyright © 2021. Octopus22.com</div>
+            <div class="col-6 col-md-4 footer__link text-center">
+                <a href="<?php echo $relative; ?>support.php">support</a>
+            </div>
+            <div class="col-12 col-md-4 footer__link text-center">
+                <a href="https://www.youtube.com/channel/UCnM8uaoohMR0SaTBm88jS0Q">
+                    <i class="fa fa-social fa-youtube"></i>
+                </a>
+                <a href="https://www.facebook.com/free-qr.codes">
+                    <i class="fa fa-social fa-facebook"></i>
+                </a>
+                <a href="https://twitter.com/freeqrcodes1">
+                    <i class="fa fa-social fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/freeqrcodes22/">
+                    <i class="fa fa-social fa-instagram"></i>
+                </a>
+            </div>
         </div>
+        <div class="copyright">Copyright © 2021. <a href="Octopus22.com">Octopus22.com</a></div>
+    </div>
     
 </body>
 </html>
