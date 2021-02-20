@@ -29,7 +29,7 @@ if (qrcdr()->getConfig('event') == true) { ?>
 
             <div class="col-12 form-group">
                 <label><?php echo qrcdr()->getString('reminder_before_event'); ?></label>
-                <select class="custom-select" name="eventreminder" id="eventreminder">
+                <select class="form-select custom-select" name="eventreminder" id="eventreminder">
                     <option value="">--</option>
                     <option value="PT0M"><?php echo qrcdr()->getString('when_the_event_starts'); ?></option>
                     <option value="-PT5M">5 <?php echo qrcdr()->getString('minutes'); ?></option>

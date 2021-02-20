@@ -8,7 +8,7 @@ if (qrcdr()->getConfig('vcard') == true) { ?>
         <div class="row">
             <div class="col-12 form-group">
                 <label><?php echo qrcdr()->getString('version'); ?></label>
-                <select class="custom-select" name="vversion">
+                <select class="form-select custom-select" name="vversion">
                   <option value="2.1">2.1</option>
                   <option value="3.0">3.0</option>
                   <!--
@@ -35,7 +35,7 @@ if (qrcdr()->getConfig('vcard') == true) { ?>
                 <div class="row no-gutters">
                     <div class="col-4">
                         <?php
-                        $output = '<select class="custom-select" name="countrycodevphone">';
+                        $output = '<select class="form-select custom-select" name="countrycodevphone">';
                         foreach ($countries as $i=>$row) {
                             $output .= '<option value="'.$row['code'].'" label="'.$row['name'].'">'.$row['name'].'</option>';
                         }
@@ -54,7 +54,7 @@ if (qrcdr()->getConfig('vcard') == true) { ?>
                 <div class="row no-gutters">
                     <div class="col-4">
                         <?php
-                        $output = '<select class="custom-select" name="countrycodevmobile">';
+                        $output = '<select class="form-select custom-select" name="countrycodevmobile">';
                         foreach ($countries as $i=>$row) {
                             $output .= '<option value="'.$row['code'].'" label="'.$row['name'].'">'.$row['name'].'</option>';
                         }
@@ -93,7 +93,7 @@ if (qrcdr()->getConfig('vcard') == true) { ?>
                 <div class="row no-gutters">
                     <div class="col-4">
                         <?php
-                        $output = '<select class="custom-select" name="countrycodevoffice">';
+                        $output = '<select class="form-select custom-select" name="countrycodevoffice">';
                         foreach ($countries as $i=>$row) {
                             $output .= '<option value="'.$row['code'].'" label="'.$row['name'].'">'.$row['name'].'</option>';
                         }
@@ -113,7 +113,7 @@ if (qrcdr()->getConfig('vcard') == true) { ?>
                 <div class="row no-gutters">
                     <div class="col-4">
                         <?php
-                        $output = '<select class="custom-select" name="countrycodevfax">';
+                        $output = '<select class="form-select custom-select" name="countrycodevfax">';
                         foreach ($countries as $i=>$row) {
                             $output .= '<option value="'.$row['code'].'" label="'.$row['name'].'">'.$row['name'].'</option>';
                         }

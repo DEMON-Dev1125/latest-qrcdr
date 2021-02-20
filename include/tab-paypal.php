@@ -9,7 +9,7 @@ if (qrcdr()->getConfig('paypal') == true) { ?>
 
             <div class="col-sm-6">
                 <label><?php echo qrcdr()->getString('type'); ?></label>
-                <select class="custom-select" name="pp_type" id="pp_type">
+                <select class="form-select custom-select" name="pp_type" id="pp_type">
                   <option value="_xclick"><?php echo qrcdr()->getString('buy_now'); ?></option>
                   <option value="_cart"><?php echo qrcdr()->getString('add_to_cart'); ?></option>
                   <option value="_donations"><?php echo qrcdr()->getString('donations'); ?></option>
@@ -43,7 +43,7 @@ if (qrcdr()->getConfig('paypal') == true) { ?>
 
             <div class="col-sm-6 yesdonation">
                 <label><?php echo qrcdr()->getString('currency'); ?></label>
-                <select class="custom-select setvalue" name="pp_currency" id="setcurrency" data-target="#getcurrency">
+                <select class="form-select custom-select setvalue" name="pp_currency" id="setcurrency" data-target="#getcurrency">
                   <option value="USD">United States dollar</option>
                   <option value="EUR">Euro</option>
                   <option value="AUD">Australian dollar</option>

@@ -10,7 +10,7 @@ if (qrcdr()->getConfig('tel') == true) { ?>
                <div class="form-group">
                     <label><?php echo qrcdr()->getString('country_code'); ?></label>
                     <?php
-                    $output = '<select class="custom-select" name="countrycodetel">';
+                    $output = '<select class="form-select custom-select" name="countrycodetel">';
                     foreach ($countries as $i=>$row) {
                         $output .= '<option value="'.$row['code'].'" label="'.$row['name'].'">'.$row['name'].'</option>';
                     }

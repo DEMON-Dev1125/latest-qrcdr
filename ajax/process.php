@@ -78,6 +78,8 @@ $custom_frame_color = isset($_POST['custom_frame_color']);
 $framecolor = filter_input(INPUT_POST, "framecolor", FILTER_SANITIZE_STRING);
 $framelabel = filter_input(INPUT_POST, "framelabel", FILTER_SANITIZE_STRING);
 $label_font = filter_input(INPUT_POST, "label_font", FILTER_SANITIZE_STRING);
+$logo_size = filter_input(INPUT_POST, "logo-size", FILTER_SANITIZE_STRING);
+$label_text_size = filter_input(INPUT_POST, "label-text-size", FILTER_SANITIZE_STRING);
 
 $optionlogo = $optionlogo ? $optionlogo : 'none';
 $outerframe = $outerframe ? $outerframe : 'none';
@@ -112,6 +114,8 @@ $optionstyle = array(
     'framelabel' => $framelabel,
     'label_font' => $label_font,
     'labeltext_color' => $labeltext_color,
+    'logo_size' => $logo_size,
+    'label_text_size' => $label_text_size,
 );
 
 $stringbackcolor = $setbackcolor ? $setbackcolor : '#FFFFFF';
@@ -479,7 +483,8 @@ if ($output_data) {
     $result = array(
         'basename' => $basename,
         'content' => $content,
-        );
+        'gradient' => $gradient
+    );
     $result = json_encode($result);
 } else {
     $result = json_encode(

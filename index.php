@@ -10,10 +10,10 @@
  * @author    Nicola Franchini <info@veno.it>
  * @copyright 2015-2021 Nicola Franchini
  * @license   item sold on codecanyon https://codecanyon.net/item/qrcdr-responsive-qr-code-generator/9226839
- * @version   5.1.7
+ * @version   5.2.0
  * @link      http://veno.es/qrcdr/
  */
-$version = '5.1.7';
+$version = '5.2.0';
 
 if (version_compare(phpversion(), '5.4', '<')) {
     exit("QRcdr requires at least PHP version 5.4.");

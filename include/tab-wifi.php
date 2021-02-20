@@ -12,7 +12,7 @@ if (qrcdr()->getConfig('wifi') == true) { ?>
             </div>
             <div class="col-md-4">
                 <label><?php echo qrcdr()->getString('network_type'); ?></label>
-                <select class="custom-select" name="networktype">
+                <select class="form-select custom-select" name="networktype">
                   <option value="WEP">WEP</option>
                   <option value="WPA">WPA/WPA2</option>
                   <option value=""><?php echo qrcdr()->getString('no_encryption'); ?></option>

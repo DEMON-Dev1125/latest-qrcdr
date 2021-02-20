@@ -620,7 +620,7 @@ if (!class_exists('QRcdrFn', false)) {
         public function loadQRcdrCSS($version = '')
         {
             $relative = $this->relativePath();
-            echo '<link href="'.$relative.'js/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css" rel="stylesheet">';
+            echo '<link href="'.$relative.'js/spectrum/spectrum.min.css" rel="stylesheet">';
             if ($this->getConfig('location') == true) {
                 echo '<link href="'.$relative.'js/ol/ol.css" rel="stylesheet">';
             }
@@ -653,7 +653,8 @@ if (!class_exists('QRcdrFn', false)) {
             if ($this->getConfig('debug_mode')) {
                 echo '<script src="'.$relative.'js/popper.js"></script>';
                 echo '<script src="'.$relative.'bootstrap/js/bootstrap.min.js"></script>';
-                echo '<script src="'.$relative.'js/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>';
+                echo '<script src="'.$relative.'js/spectrum/spectrum.min.js"></script>';
+
                 echo '<script src="'.$relative.'js/bootbox.min.js"></script>';
                 echo '<script src="'.$relative.'js/bootstrap-maxlength.min.js"></script>';
                 echo '<script src="'.$relative.'js/qrcdr.js?v='.$version.'"></script>';
@@ -679,7 +680,10 @@ if (!class_exists('QRcdrFn', false)) {
                             $folder = substr($plugin, strlen($relative));
                         }
                         $plug = basename($plugin);
-                        include dirname(dirname(__FILE__)).'/'.$folder.'/'.$plug.'.php';
+                        if (file_exists(dirname(dirname(__FILE__)).'/'.$folder.'/'.$plug.'.php')) {
+                            include dirname(dirname(__FILE__)).'/'.$folder.'/'.$plug.'.php';
+                        }
+                        
                     }
                 }
             }

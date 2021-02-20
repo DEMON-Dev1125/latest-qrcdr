@@ -140,7 +140,6 @@ class QRencdr extends QRencode
         
         }
     }
-
 }
 
 /**
@@ -244,7 +243,7 @@ class QRvct extends QRvect
             $custom_frame_color = isset($style['custom_frame_color']) ? $style['custom_frame_color'] : false;
             $framecolor = isset($style['framecolor']) && $custom_frame_color ? $style['framecolor'] : false;
             $framelabel = isset($style['framelabel']) ? $style['framelabel'] : '';
-            $label_font = isset($style['label_font']) ? $style['label_font'] : 'Arial, Helvetica, sans-serif';
+            $label_font = isset($style['label_font']) ? $style['label_font'] : false;
 
             $frametype = $setframe;
 
@@ -258,15 +257,15 @@ class QRvct extends QRvect
             $framediff = ($frameunit*($framespacer+$frameoffset+1)-$scarto_top);
             $backgroundsize = ($realimgW - $frameborder * 2 * $frameunit)*1.01;
 
-            $labellen = strlen($framelabel);
-            $xsize = $labellen > 0 ? $backgroundsize / $labellen : $realimgW;
-            $fontsize = min($xsize, $spacerH);
-            $texty = ($framespacer+1)*$frameunit - $framespacer/2*$frameunit + $fontsize/2.6;
             $frametranslate = $framelabelpos == 'top' ? ' transform="translate(0,'.$framediff.')"' : '';
             $texttranslate = $framelabelpos == 'bottom' ? ' transform="translate(0,'.($realimgW-$frameunit+$offset).')"' : '';
+
+            $textpathy = $framelabelpos == 'bottom' ? ($realimgW-$frameunit+$offset) : 0;
+            $textmaxw = $realimgW - $frameunit*2;
+            $textmaxh = $spacerH+$frameunit;
+
             $backgroundmargin = $frameunit*$frameborder;
             $labeltext_color = isset($style['labeltext_color']) ? $style['labeltext_color'] : '#ffffff';
-            $textadjust = $xsize < $spacerH ? ' textLength="'.($backgroundsize-$frameunit*2).'" lengthAdjust="spacing" x="'.($backgroundmargin+$frameunit).'"': ' text-anchor="middle" x="'.($realimgW/2).'"';
         }
 
         $realimgH = $realimgW+$framediff;
@@ -324,33 +323,23 @@ class QRvct extends QRvect
                 $endpoint = ($startpoint + $waterholefinal);
                 $watermark_size = $pixelPerPoint*$waterholefinal;
             }
+            $logo_size = isset($style['logo_size']) ? intval($style['logo_size']) : 100;
+            $logo_scale = $logo_size/100;
+            $watermark_size = $watermark_size*$logo_scale;
+
+
         }
+
         // $output .= '<desc>debug</desc>'."\n";
-        $output .= '<defs>';
-
-        $fill = 'fill="'.$frontcolor.'"';
-
-        if ($gradient) {
-            if ($radial) {
-                $output .= '<radialGradient id="pattern-gradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%" gradientUnits="userSpaceOnUse">';
-                $output .= '<stop offset="0%" stop-color="'.$frontcolor.'" />';
-                $output .= '<stop offset="100%" stop-color="'.$gradient_color.'" /></radialGradient>'."\n";
-            } else {
-                $output .= '<linearGradient id="pattern-gradient" x1="0%" y1="0%" x2="12%" y2="100%" gradientUnits="userSpaceOnUse">';
-                $output .= '<stop offset="0%" stop-color="'.$frontcolor.'" />';
-                $output .= '<stop offset="100%" stop-color="'.$gradient_color.'" /></linearGradient>'."\n";
-            }
-            $fill = 'fill="url(#pattern-gradient)"';
-        }
-
-        $output .= '<mask id="qrmask"><g fill="#ffffff">';
+        $fill = $gradient ? '' : 'fill="'.$frontcolor.'"';
+        $qrblock = '';
 
         // Draw frame same color of dots.
         if ($setframe && !$framecolor) {
-            $output .= '<g transform="scale('.$frameunit.')">' . $frames[$frametype]['path'].'</g>'."\n";
+            $qrblock .= '<g transform="scale('.$frameunit.')" '.$fill.'>' . $frames[$frametype]['path'].'</g>'."\n";
         }
 
-        $output .= '<g'.$frametranslate.'>'."\n";
+        $qrblock .= '<g'.$frametranslate.' '.$fill.'>'."\n";
 
         // Remove points for watermark
         if ($watermark && $no_logo_bg) {
@@ -391,19 +380,37 @@ class QRvct extends QRvect
                     if ($pattern == 'shake') {
                         $hake = ' rotate('.rand(-10, 10).')';
                     }
-                    $output .= '<g transform="translate('.$x.','.$y.') scale('.($pixelPerPoint/6*1.03).')'.$hake.'">' . $patternPath[$path].'</g>'."\n";
+                    $qrblock .= '<g transform="translate('.$x.','.$y.') scale('.($pixelPerPoint/6*1.03).')'.$hake.'">' . $patternPath[$path].'</g>'."\n";
                 }
             }
         }
         if (!$markers_color) {
-            $output .= '<g transform="translate('.$marker_margin.','.$marker_margin.')"><g transform="scale('.($pixelPerPoint/2).')">'.$markerOutPath['path'].'</g></g>'."\n";
-            $output .= '<g transform="translate('.$opposite_pos.','.$marker_margin.')"><g transform="scale('.($pixelPerPoint/2).')'.$rotate_tr_out.'">'.$markerOutPath['path'].'</g></g>'."\n";
-            $output .= '<g transform="translate('.$marker_margin.','.$opposite_pos.')"><g transform="scale('.($pixelPerPoint/2).')'.$rotate_bl_out.'">'.$markerOutPath['path'].'</g></g>'."\n";
-            $output .= '<g transform="translate('.$marker_margin_in.','.$marker_margin_in.')"><g transform="scale('.($pixelPerPoint/2).')">'.$markerInPath['path'].'</g></g>'."\n";
-            $output .= '<g transform="translate('.$opposite_pos_in.','.$marker_margin_in.')"><g transform="scale('.($pixelPerPoint/2).')'.$rotate_tr_in.'">'.$markerInPath['path'].'</g></g>'."\n";
-            $output .= '<g transform="translate('.$marker_margin_in.','.$opposite_pos_in.')"><g transform="scale('.($pixelPerPoint/2).')'.$rotate_bl_in.'">'.$markerInPath['path'].'</g></g>'."\n";
+            $qrblock .= '<g transform="translate('.$marker_margin.','.$marker_margin.')"><g transform="scale('.($pixelPerPoint/2).')">'.$markerOutPath['path'].'</g></g>'."\n";
+            $qrblock .= '<g transform="translate('.$opposite_pos.','.$marker_margin.')"><g transform="scale('.($pixelPerPoint/2).')'.$rotate_tr_out.'">'.$markerOutPath['path'].'</g></g>'."\n";
+            $qrblock .= '<g transform="translate('.$marker_margin.','.$opposite_pos.')"><g transform="scale('.($pixelPerPoint/2).')'.$rotate_bl_out.'">'.$markerOutPath['path'].'</g></g>'."\n";
+            $qrblock .= '<g transform="translate('.$marker_margin_in.','.$marker_margin_in.')"><g transform="scale('.($pixelPerPoint/2).')">'.$markerInPath['path'].'</g></g>'."\n";
+            $qrblock .= '<g transform="translate('.$opposite_pos_in.','.$marker_margin_in.')"><g transform="scale('.($pixelPerPoint/2).')'.$rotate_tr_in.'">'.$markerInPath['path'].'</g></g>'."\n";
+            $qrblock .= '<g transform="translate('.$marker_margin_in.','.$opposite_pos_in.')"><g transform="scale('.($pixelPerPoint/2).')'.$rotate_bl_in.'">'.$markerInPath['path'].'</g></g>'."\n";
         }
-        $output .= '</g></g></mask></defs>'."\n";
+        $qrblock .= '</g>';
+
+        if ($gradient) {
+            $output .= '<defs>';
+            if ($radial) {
+                $output .= '<radialGradient id="pattern-gradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%" gradientUnits="userSpaceOnUse">';
+                $output .= '<stop offset="0%" stop-color="'.$frontcolor.'" />';
+                $output .= '<stop offset="100%" stop-color="'.$gradient_color.'" /></radialGradient>'."\n";
+            } else {
+                $output .= '<linearGradient id="pattern-gradient" x1="0%" y1="0%" x2="12%" y2="100%" gradientUnits="userSpaceOnUse">';
+                $output .= '<stop offset="0%" stop-color="'.$frontcolor.'" />';
+                $output .= '<stop offset="100%" stop-color="'.$gradient_color.'" /></linearGradient>'."\n";
+            }
+            $fill = 'fill="url(#pattern-gradient)"';
+            $output .= '<mask id="qrmask"><g fill="#ffffff">';
+            $output .= $qrblock;
+            $output .= '</g></mask>';
+            $output .= '</defs>'."\n";
+        }
 
         // Draw background.
         if (!empty($back_color) && $back_color !== 'transparent') {
@@ -414,8 +421,11 @@ class QRvct extends QRvect
         if ($setframe && $framecolor) {
             $output .= '<g fill="'.$framecolor.'" transform="scale('.$frameunit.')">' . $frames[$frametype]['path'].'</g>'."\n";
         }
-        $output .= '<rect x="0" y="0" width="'.$realimgW.'" height="'.$realimgH.'" mask="url(#qrmask)" '.$fill.' />'."\n";
-
+        if ($gradient) {
+            $output .= '<rect x="0" y="0" width="'.$realimgW.'" height="'.$realimgH.'" mask="url(#qrmask)" '.$fill.' />'."\n";
+        } else {
+            $output .= $qrblock;
+        }
         if ($markers_color) {
             $marker_in_fill = $markerInColor ? ' fill="'.$markerInColor.'"' : ' fill="'.$frontcolor.'"';
             $marker_out_fill = $markerOutColor ? ' fill="'.$markerOutColor.'"' : ' fill="'.$frontcolor.'"';
@@ -433,8 +443,34 @@ class QRvct extends QRvect
             $output .= '<g transform="translate('.$marker_margin_in.','.$opposite_pos_in.')" '.$marker_in_bl_fill.'><g transform="scale('.($pixelPerPoint/2).')'.$rotate_bl_in.'">' . $markerInPath['path'].'</g></g>';
             $output .= '</g>'."\n";
         }
-        if ($setframe && $framelabel) {
-            $output .= '<text fill="'.$labeltext_color.'" font-family="'.$label_font.'" font-size="'.$fontsize.'px"'.$textadjust.' y="'.$texty.'"'.$texttranslate.'>'.$framelabel.'</text>';
+        if ($setframe && $framelabel && $label_font) {
+
+            $label_text_size = isset($style['label_text_size']) ? intval($style['label_text_size']) : 100;
+            $label_scale = $label_text_size/100;
+
+            include dirname(__FILE__).'/EasySVG.php';
+
+            $text = $framelabel;
+            $svg = new EasySVG();
+            // $svg->setFontSVG(dirname(__FILE__).'/fonts/'.$label_font);
+            // $svg->setFontSize(100);
+            // $svg->setFontColor($labeltext_color);
+            $svg->setFont(dirname(__FILE__).'/fonts/'.$label_font, 100, $labeltext_color);
+
+            $svg->addText($text);
+
+            // set width/height according to text.
+            list($textWidth, $textHeight) = $svg->textDimensions($text);
+
+            $textXscale = $qrcodeW / $textWidth;
+            $textYscale = $textmaxh / $textHeight;
+
+            $textscale = min($textXscale, $textYscale)*$label_scale;
+
+            $textoffX = $textmaxw/2 - ($textWidth*$textscale)/2 + $frameunit;
+            $textoffY = ($textmaxh - $frameunit/2)/2 - ($textHeight*$textscale)/2;
+
+            $output .= '<g transform="translate('.$textoffX.','.($textpathy+$textoffY).') scale('.$textscale.')">'. $svg->asPath() .'</g>';
         }
         if ($watermark) {
 
@@ -457,7 +493,8 @@ class QRvct extends QRvect
 
             if ($base64) {
                 $watermark_pos = $realimgW/2 - $watermark_size/2;
-                $output .= '<image xlink:href="'.$base64.'" width="'.$watermark_size.'" height="'.$watermark_size.'" x="'.$watermark_pos.'" y="'.$watermark_pos.'"'.$frametranslate.' />'."\n";
+                $watermark_pos_y = $watermark_pos + $framediff;
+                $output .= '<image xlink:href="'.$base64.'" width="'.$watermark_size.'" height="'.$watermark_size.'" x="'.$watermark_pos.'" y="'.$watermark_pos_y.'"/>'."\n";
             }
         }
         $output .= '</svg>';

@@ -9,7 +9,7 @@ if (qrcdr()->getConfig('whatsapp') == true) { ?>
             <div class="col-md-4 form-group">
                 <label><?php echo qrcdr()->getString('country_code'); ?></label>
                 <?php
-                $output = '<select class="custom-select" name="wapp_countrycode" required="required">';
+                $output = '<select class="form-select custom-select" name="wapp_countrycode" required="required">';
                 foreach ($countries as $i=>$row) {
                     $output .= '<option value="'.$row['code'].'" label="'.$row['name'].'">'.$row['name'].'</option>';
                 }
